@@ -11,7 +11,7 @@ interface TodoListProps {
     todos:TodoItem[]
 }
 
-export const TodoList = ({todos}:TodoListProps) => {
+const TodoList = ({todos}:TodoListProps) => {
     return (
         <div>
             {
@@ -22,3 +22,5 @@ export const TodoList = ({todos}:TodoListProps) => {
         </div>
     );
 }
+
+export default TodoList;

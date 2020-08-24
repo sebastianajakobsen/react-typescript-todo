@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import {TodoList} from "./Components/TodoList";
+import TodoList from "./Components/TodoList";
 
-export const App = () => {
+const App = () => {
 
   const [todos, setTodos] = useState([
     {
@@ -28,4 +28,4 @@ export const App = () => {
   );
 }
 
-
+export default App;

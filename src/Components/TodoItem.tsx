@@ -8,7 +8,7 @@ interface TodoProps {
     }
 }
 
-function TodoItem({todo}:TodoProps) {
+const TodoItem = ({todo}:TodoProps) => {
     return (
         <div>
             {todo.text}
