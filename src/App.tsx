@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
-import TodoList from "./Components/TodoList";
+import {TodoList} from "./Components/TodoList";
 
-function App() {
+export const App = () => {
 
   const [todos, setTodos] = useState([
     {
@@ -21,7 +21,6 @@ function App() {
     },
   ])
 
-
   return (
     <div>
       <TodoList todos={todos}/>
@@ -29,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+
