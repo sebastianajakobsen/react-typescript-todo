@@ -1,31 +1,40 @@
 import React, {useState} from 'react';
 import TodoList from "./Components/TodoList";
 
-
-const App: React.FC = () => {
-
-    const [todos, setTodo] = useState<ITodo[]>([
+const App = () => {
+    const [todos, setTodos] = useState<Todo[]>([
         {
-            id: 1,
-            task: "hello world 1",
-            completed: true
+            id:1,
+            text:"Walk the dog",
+            completed:false
         },
         {
-            id: 2,
-            task: "hello world 2",
-            completed: true
+            id:2,
+            text:"Do the dishes",
+            completed:false
         },
         {
-            id: 4,
-            task: "hello world 3",
-            completed: false
+            id:3,
+            text:"Relax",
+            completed:true
         }
     ])
 
+    const toggleTodo = (id:number) => {
+        setTodos(todos.map(todo => {
+            if(todo.id === id) {
+                return {
+                    ...todo,
+                    completed:!todo.completed
+                }
+            }
+            return todo;
+        }))
+    }
+
     return (
         <div>
-            <p>Hello world</p>
-            <TodoList todos={todos}/>
+           <TodoList toggleTodo={toggleTodo} todos={todos} />
         </div>
     );
 };
