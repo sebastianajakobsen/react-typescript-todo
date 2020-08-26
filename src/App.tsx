@@ -38,8 +38,8 @@ const App = () => {
         setTodos(todos.filter(todo => todo.id !== id))
     }
 
-    const addTodo = (newTodo:string ) => {
-        setTodos([...todos, {text:newTodo, completed:false, id:Math.floor(Math.random() * 10000000)}]);
+    const addTodo = (newTodo:Todo) => {
+        setTodos([...todos, newTodo])
     }
 
     return (
