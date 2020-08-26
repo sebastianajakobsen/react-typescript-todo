@@ -45,7 +45,7 @@ const App = () => {
     return (
         <div className="relative overflow-hidden mb-8">
             <div
-                className="rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 px-3 py-10 bg-gray-200 flex justify-center">
+                className="rounded-t-lg overflow-hidden border-t border-l border-r border-gray-400 px-3 py-10 flex justify-center">
                 <div className="w-full max-w-xs">
                     <div className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
                         <h1 className="text-2xl">React todo app</h1>
