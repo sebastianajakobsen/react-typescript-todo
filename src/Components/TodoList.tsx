@@ -3,15 +3,17 @@ import TodoItem from "./TodoItem";
 
 interface TodoList {
     todos:Array<Todo>,
-    toggleTodo:(id: number) => void;
+    toggleTodo:(id: number) => void,
+    removeTodo:(id: number) => void;
 }
 
-const TodoList:React.FC<TodoList> = ({todos, toggleTodo}) => {
+
+const TodoList:React.FC<TodoList> = ({todos, toggleTodo, removeTodo}) => {
     return (
         <div>
             {
                 todos.map(todo => (
-                    <TodoItem toggleTodo={toggleTodo} key={todo.id} todo={todo} />
+                    <TodoItem removeTodo={removeTodo} toggleTodo={toggleTodo} key={todo.id} todo={todo}/>
                 ))
             }
         </div>

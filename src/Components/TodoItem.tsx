@@ -1,13 +1,28 @@
 import React from 'react';
 
-interface ITodoItem {
-    todo:ITodo
+interface TodoItem {
+    todo:Todo,
+    toggleTodo:(id: number) => void,
+    removeTodo:(id: number) => void
 }
 
-const TodoItem:React.FC<ITodoItem> = ({todo}) => {
+const TodoItem:React.FC<TodoItem> = ({todo, toggleTodo, removeTodo}) => {
+
+    const handleCheckbox = () => {
+        toggleTodo(todo.id)
+    }
+
+    const handleButtonClick = () => {
+        removeTodo(todo.id)
+    }
+
     return (
-        <div>
-            {todo.task}
+        <div className="flex items-center">
+            <input onChange={handleCheckbox} checked={todo.completed} type="checkbox"/>
+            <p className="mx-2" style={{
+                textDecoration:todo.completed ? 'line-through' : "none"
+            }}>{todo.text}</p>
+            <button onClick={handleButtonClick} className="font-bold text-red-600">x</button>
         </div>
     );
 };
